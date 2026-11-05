@@ -4,33 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tang Zhiteng | Academic Homepage</title>
+    <title>Tang Zhiteng's Homepage</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            max-width: 900px;
-            margin: 50px auto;
-            padding: 0 25px;
-            font-family: Arial, sans-serif;
-            color: #333;
+            margin: 0;
+            padding: 0;
+            background: #ffffff;
+            color: #333333;
+            font-family: Georgia, "Times New Roman", serif;
             line-height: 1.7;
-            background: #fff;
-        }
-
-        h1 {
-            font-size: 30px;
-            margin-bottom: 5px;
-        }
-
-        h2 {
-            font-size: 21px;
-            margin-top: 35px;
-            padding-bottom: 6px;
-            border-bottom: 1px solid #ddd;
         }
 
         a {
-            color: #1769aa;
+            color: #1769c2;
             text-decoration: none;
         }
 
@@ -38,75 +29,458 @@
             text-decoration: underline;
         }
 
-        .subtitle {
-            color: #666;
+        /* Navigation */
+        .navbar {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 18px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #d8e1ec;
+        }
+
+        .site-title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #172b4d;
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 34px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: #333333;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .nav-links a:hover {
+            color: #1769c2;
+        }
+
+        /* Main layout */
+        .container {
+            max-width: 1400px;
+            margin: 28px auto;
+            padding: 0 30px;
+            display: grid;
+            grid-template-columns: 270px minmax(0, 1fr);
+            gap: 35px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            padding: 15px 22px;
+            border-right: 1px solid #e0e5eb;
+        }
+
+        .avatar {
+            width: 155px;
+            height: 155px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            border: 2px solid #d9e5f3;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #315b8c;
+            background: #f4f7fb;
+            font-size: 38px;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            font-size: 25px;
+            color: #172b4d;
+            margin: 10px 0;
+        }
+
+        .sidebar-info {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+
+        .sidebar hr {
+            border: none;
+            border-top: 1px solid #d8e1ec;
+            margin: 20px 0;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .contact-links a {
+            font-size: 17px;
+        }
+
+        /* Content sections */
+        .content {
+            min-width: 0;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            grid-template-areas:
+                "about about"
+                "publications projects"
+                "publications education"
+                "news news";
+            gap: 24px 28px;
+            align-content: start;
+        }
+
+        .section {
+            border: 1px solid #d5e3f4;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #ffffff;
+        }
+
+        .section h2 {
+            margin: 0;
+            padding: 7px 17px;
+            font-size: 21px;
+            color: #172b4d;
+            background: #edf4fc;
+            border-bottom: 1px solid #e1ebf7;
+        }
+
+        .section-body {
+            padding: 14px 19px;
+            font-size: 16px;
+        }
+
+        .section-body p:first-child {
             margin-top: 0;
         }
 
-        ul {
-            padding-left: 22px;
+        .section-body p:last-child {
+            margin-bottom: 0;
         }
 
-        li {
+        .about {
+            grid-area: about;
+        }
+
+        .publications {
+            grid-area: publications;
+            min-height: 330px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .projects {
+            grid-area: projects;
+        }
+
+        .education {
+            grid-area: education;
+        }
+
+        .news {
+            grid-area: news;
+        }
+
+        /* About Me */
+        .research-interests {
+            margin-top: 15px;
+        }
+
+        .research-interests strong {
+            color: #172b4d;
+        }
+
+        /* Publications */
+        .publication-list {
+            padding-left: 22px;
+            margin: 5px 0;
+        }
+
+        .publication-list li {
+            margin-bottom: 17px;
+        }
+
+        .publication-links {
+            font-size: 14px;
+            margin-top: 4px;
+        }
+
+        .more-link {
+            display: block;
+            text-align: right;
+            margin-top: auto;
+            padding: 10px 18px 15px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        /* Projects and Education */
+        .simple-list {
+            padding-left: 22px;
+            margin: 3px 0;
+        }
+
+        .simple-list li {
             margin-bottom: 7px;
+        }
+
+        /* News */
+        .news-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .news-list li {
+            margin-bottom: 6px;
+        }
+
+        .news-date {
+            display: inline-block;
+            width: 105px;
+            font-weight: bold;
+            color: #315b8c;
+        }
+
+        /* Footer */
+        footer {
+            max-width: 1400px;
+            margin: 35px auto 0;
+            padding: 18px 20px;
+            border-top: 1px solid #d8e1ec;
+            text-align: center;
+            color: #777777;
+            font-size: 14px;
+        }
+
+        /* Mobile */
+        @media (max-width: 850px) {
+            .navbar {
+                flex-direction: column;
+                gap: 12px;
+                padding: 15px;
+            }
+
+            .site-title {
+                font-size: 23px;
+            }
+
+            .nav-links {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+                padding: 0 18px;
+                gap: 20px;
+            }
+
+            .sidebar {
+                border-right: none;
+                border-bottom: 1px solid #e0e5eb;
+                padding-bottom: 22px;
+                text-align: center;
+            }
+
+            .content {
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    "about"
+                    "publications"
+                    "projects"
+                    "education"
+                    "news";
+                gap: 18px;
+            }
+
+            .publications {
+                min-height: 0;
+            }
+
+            .news-date {
+                width: auto;
+                margin-right: 10px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <h1>Tang Zhiteng</h1>
-    <p class="subtitle">
-        Ph.D. Student in Computer Science<br>
-        Wuhan University of Technology
-    </p>
+<!-- Navigation -->
+<header class="navbar">
+    <div class="site-title">Tang Zhiteng's Homepage</div>
 
-    <p>
-        <a href="mailto:YOUR_EMAIL">Email</a> |
-        <a href="https://github.com/tangzhiteng">GitHub</a> |
-        <a href="YOUR_SCHOLAR_URL">Google Scholar</a>
-    </p>
+    <nav class="nav-links">
+        <a href="#about">Home</a>
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#news">News</a>
+    </nav>
+</header>
 
-    <h2>About Me</h2>
-    <p>
-        I am a Ph.D. student at Wuhan University of Technology.
-        My research focuses on computer vision and deep learning.
-    </p>
+<div class="container">
 
-    <h2>Research Interests</h2>
-    <ul>
-        <li>Computer Vision</li>
-        <li>Image Compression</li>
-        <li>Generative Models and Diffusion Models</li>
-        <li>Multi-task Visual Perception</li>
-    </ul>
+    <!-- Left Sidebar -->
+    <aside class="sidebar">
 
-    <h2>Publications</h2>
-    <ul>
-        <li>Publications will be updated.</li>
-    </ul>
+        <div class="avatar">
+            <img src="avatar.jpg" alt="Tang Zhiteng"
+                 onerror="this.style.display='none'; this.parentElement.textContent='TZ';">
+        </div>
 
-    <h2>Research Projects</h2>
-    <ul>
-        <li>Generative Image Compression</li>
-        <li>Task-oriented Visual Compression</li>
-        <li>Multi-task Visual Perception</li>
-    </ul>
+        <h2>Tang Zhiteng</h2>
 
-    <h2>Education</h2>
-    <ul>
-        <li>
-            Ph.D. in Computer Science,
+        <p class="sidebar-info">
+            Ph.D. Student
+        </p>
+
+        <p class="sidebar-info">
             Wuhan University of Technology
-        </li>
-    </ul>
+        </p>
 
-    <h2>Skills</h2>
-    <ul>
-        <li>Programming: Python, C++, MATLAB</li>
-        <li>Deep Learning: PyTorch</li>
-        <li>Tools: Linux, Git, CUDA</li>
-    </ul>
+        <hr>
+
+        <div class="contact-links">
+            <a href="mailto:YOUR_EMAIL">✉ Email</a>
+            <a href="https://github.com/tangzhiteng" target="_blank">◉ GitHub</a>
+            <a href="YOUR_SCHOLAR_URL" target="_blank">◆ Google Scholar</a>
+            <a href="YOUR_CV_URL" target="_blank">▤ CV</a>
+        </div>
+
+    </aside>
+
+    <!-- Right Content -->
+    <main class="content">
+
+        <!-- About Me -->
+        <section class="section about" id="about">
+            <h2>About Me</h2>
+
+            <div class="section-body">
+                <p>
+                    I am a Ph.D. student at Wuhan University of Technology.
+                    My research focuses on computer vision and deep learning,
+                    particularly generative image compression and
+                    multi-task visual perception.
+                </p>
+
+                <p class="research-interests">
+                    <strong>Research Interests:</strong>
+                    Computer Vision ·
+                    Generative Image Compression ·
+                    Diffusion Models ·
+                    Multi-task Visual Perception
+                </p>
+            </div>
+        </section>
+
+        <!-- Publications -->
+        <section class="section publications" id="publications">
+            <h2>Publications</h2>
+
+            <div class="section-body">
+                <ol class="publication-list">
+                    <li>
+                        <strong>Paper Title.</strong>
+                        Author A, <strong>Tang Zhiteng</strong>, Author C.
+                        <em>Conference / Journal</em>, Year.
+                        <div class="publication-links">
+                            <a href="#">[Paper]</a>
+                            <a href="#">[Code]</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <strong>Another Paper Title.</strong>
+                        Author A, Tang Zhiteng, Author C.
+                        <em>Conference / Journal</em>, Year.
+                        <div class="publication-links">
+                            <a href="#">[Paper]</a>
+                            <a href="#">[Code]</a>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+
+            <a class="more-link" href="YOUR_SCHOLAR_URL">
+                More Publications →
+            </a>
+        </section>
+
+        <!-- Research Projects -->
+        <section class="section projects" id="projects">
+            <h2>Research Projects</h2>
+
+            <div class="section-body">
+                <ul class="simple-list">
+                    <li>Generative Image Compression</li>
+                    <li>Task-oriented Visual Compression</li>
+                    <li>Multi-task Visual Perception</li>
+                </ul>
+            </div>
+
+            <a class="more-link" href="https://github.com/tangzhiteng">
+                More Projects →
+            </a>
+        </section>
+
+        <!-- Education -->
+        <section class="section education" id="education">
+            <h2>Education</h2>
+
+            <div class="section-body">
+                <ul class="simple-list">
+                    <li>
+                        <strong>Ph.D. in Computer Science</strong><br>
+                        Wuhan University of Technology<br>
+                        2025 – Present
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- News -->
+        <section class="section news" id="news">
+            <h2>News</h2>
+
+            <div class="section-body">
+                <ul class="news-list">
+                    <li>
+                        <span class="news-date">2026-XX</span>
+                        Research updates will be added here.
+                    </li>
+
+                    <li>
+                        <span class="news-date">2026-XX</span>
+                        New publications and projects will be updated here.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+</div>
+
+<footer>
+    © 2026 Tang Zhiteng. Academic Homepage.
+</footer>
 
 </body>
 </html>
