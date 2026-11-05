@@ -2,385 +2,508 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tang Zhiteng's Homepage</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tang Zhiteng | Homepage</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<style>
+* {
+    box-sizing: border-box;
+}
 
-        body {
-            margin: 0;
-            background: #ffffff;
-            color: #30343b;
-            font-family: Georgia, "Times New Roman", serif;
-            line-height: 1.7;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        a {
-            color: #1769c2;
-            text-decoration: none;
-        }
+body {
+    margin: 0;
+    background: #f4f3ee;
+    color: #17272b;
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.5;
+}
 
-        a:hover {
-            text-decoration: underline;
-        }
+a {
+    color: #185c61;
+    text-decoration: none;
+}
 
-        /* Navigation */
-        .navbar {
-            max-width: 1400px;
-            margin: auto;
-            padding: 18px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #d8e1ec;
-        }
+a:hover {
+    text-decoration: underline;
+}
 
-        .site-title {
-            font-size: 28px;
-            font-weight: bold;
-            color: #172b4d;
-            white-space: nowrap;
-        }
+/* Navigation */
+.navbar {
+    height: 40px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #d9d9d2;
+    background: #f4f3ee;
+}
 
-        .site-title span {
-            color: #1769c2;
-        }
+.site-title {
+    font-size: 15px;
+    font-weight: bold;
+    white-space: nowrap;
+}
 
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            flex-wrap: wrap;
-        }
+.site-title span {
+    color: #185c61;
+    font-size: 12px;
+    margin-left: 5px;
+}
 
-        .nav-links a {
-            color: #333;
-            font-weight: bold;
-            font-size: 16px;
-        }
+.nav-links {
+    display: flex;
+    gap: 22px;
+    align-items: center;
+}
 
-        .nav-links a:hover {
-            color: #1769c2;
-        }
+.nav-links a {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #17272b;
+}
 
-        /* Main layout */
-        .container {
-            max-width: 1400px;
-            margin: 28px auto;
-            padding: 0 30px;
-            display: grid;
-            grid-template-columns: 270px minmax(0, 1fr);
-            gap: 35px;
-        }
+/* Main layout */
+.container {
+    max-width: 1400px;
+    margin: 25px auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 245px minmax(0, 1fr);
+    gap: 32px;
+    align-items: start;
+}
 
-        /* Left Sidebar */
-        .sidebar {
-            padding: 15px 22px;
-            border-right: 1px solid #e0e5eb;
-        }
+/* Left profile */
+.sidebar {
+    background: #ffffff;
+    border: 1px solid #d8dcd6;
+    padding: 17px 15px;
+}
 
-        .profile-name {
-            font-size: 36px;
-            font-weight: bold;
-            color: #18252b;
-            line-height: 1.2;
-            margin: 0 0 16px;
-        }
+.profile-top {
+    padding: 0 0 14px;
+    border-bottom: 1px solid #d8dcd6;
+}
 
-        .profile-title {
-            font-family: Arial, sans-serif;
-            font-size: 21px;
-            font-weight: bold;
-            line-height: 1.5;
-            color: #263238;
-            margin-bottom: 10px;
-        }
+.avatar {
+    width: 128px;
+    height: 152px;
+    margin: 0 auto 12px;
+    overflow: hidden;
+    border-radius: 3px;
+    background: #e9e8e1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #185c61;
+    font-size: 32px;
+}
 
-        .profile-location {
-            font-family: Arial, sans-serif;
-            font-size: 17px;
-            line-height: 1.7;
-            color: #748087;
-        }
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-        .sidebar hr {
-            border: none;
-            border-top: 1px solid #d9dfdc;
-            margin: 22px 0;
-        }
+.profile-name {
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 1.25;
+    margin: 0 0 8px;
+}
 
-        .profile-item {
-            padding: 10px 0 14px;
-            border-bottom: 1px solid #e2e6e3;
-        }
+.profile-title {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1.5;
+    margin-bottom: 6px;
+}
 
-        .profile-label {
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            font-weight: bold;
-            letter-spacing: 1.2px;
-            color: #718087;
-            margin-bottom: 5px;
-        }
+.profile-location {
+    font-family: Arial, sans-serif;
+    color: #68777a;
+    font-size: 11px;
+    line-height: 1.6;
+}
 
-        .profile-value {
-            font-family: Arial, sans-serif;
-            font-size: 17px;
-            line-height: 1.6;
-            color: #303b40;
-            overflow-wrap: anywhere;
-        }
+.profile-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #e5e6e0;
+}
 
-        .profile-value a,
-        .profile-social a {
-            color: #245e60;
-            font-weight: bold;
-            text-decoration: underline;
-        }
+.profile-label {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 0.7px;
+    color: #69787a;
+    margin-bottom: 3px;
+}
 
-        .profile-social {
-            display: flex;
-            justify-content: center;
-            gap: 28px;
-            margin-top: 22px;
-            font-family: Arial, sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-        }
+.profile-value {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    line-height: 1.6;
+    color: #25373a;
+    overflow-wrap: anywhere;
+}
 
-        /* Right Content Layout */
-        .content {
-            min-width: 0;
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            grid-template-areas:
-                "about about"
-                "publications projects"
-                "publications education"
-                "news news";
-            gap: 24px 28px;
-            align-content: start;
-        }
+.profile-value a {
+    font-weight: bold;
+    text-decoration: underline;
+}
 
-        /* Common Section Style */
-        .section {
-            border: 1px solid #d5e3f4;
-            border-radius: 8px;
-            overflow: hidden;
-            background: #fff;
-        }
+.profile-social {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    padding-top: 12px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+}
 
-        .section h2 {
-            margin: 0;
-            padding: 7px 17px;
-            font-size: 21px;
-            color: #172b4d;
-            background: #edf4fc;
-            border-bottom: 1px solid #e1ebf7;
-        }
+/* Main content panel */
+.content {
+    background: #ffffff;
+    border: 1px solid #d8dcd6;
+    padding: 22px 27px 30px;
+    min-width: 0;
+}
 
-        .section-body {
-            padding: 14px 19px;
-            font-size: 16px;
-        }
+/* Sections */
+.section {
+    padding-bottom: 23px;
+    margin-bottom: 17px;
+    border-bottom: 1px solid #d5dad3;
+}
 
-        .section-body p:first-child {
-            margin-top: 0;
-        }
+.section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
 
-        .section-body p:last-child {
-            margin-bottom: 0;
-        }
+.section-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 9px;
+    margin-bottom: 7px;
+}
 
-        /* Section Positions */
-        .about {
-            grid-area: about;
-        }
+.section-number {
+    color: #c75d4e;
+    font-size: 10px;
+    font-style: italic;
+    min-width: 9px;
+}
 
-        .publications {
-            grid-area: publications;
-            min-height: 350px;
-            display: flex;
-            flex-direction: column;
-        }
+.section-heading h2 {
+    font-size: 21px;
+    color: #17353a;
+    margin: 0;
+    line-height: 1.4;
+}
 
-        .projects {
-            grid-area: projects;
-        }
+.section-body {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #263438;
+}
 
-        .education {
-            grid-area: education;
-        }
+.section-body p {
+    margin: 0;
+}
 
-        .news {
-            grid-area: news;
-        }
+/* About */
+.about {
+    padding-bottom: 25px;
+}
 
-        /* Research Interests */
-        .research-interests {
-            margin-top: 15px;
-        }
+/* Research Interests */
+.interest-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 9px;
+    margin-top: 10px;
+}
 
-        .research-interests strong {
-            color: #172b4d;
-        }
+.interest-item {
+    min-height: 75px;
+    background: #f3f1eb;
+    border-top: 2px solid #185c61;
+    padding: 10px 9px;
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+}
 
-        /* Publications */
-        .publication-list {
-            padding-left: 22px;
-            margin: 5px 0;
-        }
+.interest-number {
+    color: #c75d4e;
+    font-size: 9px;
+    font-style: italic;
+    flex-shrink: 0;
+}
 
-        .publication-list li {
-            margin-bottom: 15px;
-        }
+.interest-name {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.3;
+    color: #17272b;
+}
 
-        .publication-links {
-            font-size: 14px;
-            margin-top: 3px;
-        }
+/* Publications */
+.publication-item {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 9px;
+    padding: 9px 0;
+    border-bottom: 1px solid #e5e6e0;
+}
 
-        .more-link {
-            display: block;
-            text-align: right;
-            margin-top: auto;
-            padding: 10px 18px 15px;
-            font-size: 16px;
-            font-weight: bold;
-        }
+.publication-item:last-child {
+    border-bottom: none;
+}
 
-        /* Research Projects */
-        .project-name {
-            font-weight: bold;
-            color: #30343b;
-        }
+.item-number {
+    color: #c75d4e;
+    font-size: 10px;
+    font-style: italic;
+}
 
-        /* Education */
-        .education-entry {
-            padding: 3px 0 17px;
-            margin-bottom: 16px;
-            border-bottom: 1px solid #e0e5eb;
-        }
+.publication-title {
+    font-size: 13px;
+    font-weight: bold;
+    color: #17272b;
+}
 
-        .education-entry:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 3px;
-        }
+.publication-note {
+    color: #69787a;
+    font-size: 11px;
+    margin-top: 5px;
+}
 
-        .education-date {
-            color: #c65d50;
-            font-style: italic;
-            font-size: 15px;
-            margin-bottom: 2px;
-        }
+/* Projects */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 9px;
+}
 
-        .education-degree {
-            color: #172b4d;
-            font-size: 18px;
-            font-weight: bold;
-            line-height: 1.4;
-        }
+.project-card {
+    background: #f3f1eb;
+    border-top: 2px solid #185c61;
+    padding: 11px 10px;
+    min-height: 90px;
+    display: grid;
+    grid-template-columns: 35px minmax(0, 1fr);
+    gap: 7px;
+}
 
-        .education-school {
-            color: #687b91;
-            font-size: 15px;
-        }
+.project-year {
+    color: #c75d4e;
+    font-size: 10px;
+    font-style: italic;
+}
 
-        .education-advisor {
-            font-size: 15px;
-        }
+.project-title {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.4;
+}
 
-        .education-advisor strong {
-            color: #315b78;
-        }
+.project-description {
+    font-size: 10px;
+    color: #68777a;
+    margin-top: 4px;
+}
 
-        /* News */
-        .news-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+/* Bottom two columns */
+.bottom-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 22px;
+    margin-top: 0;
+}
 
-        .news-list li {
-            margin-bottom: 6px;
-        }
+.bottom-section {
+    min-width: 0;
+}
 
-        .news-date {
-            display: inline-block;
-            width: 105px;
-            font-weight: bold;
-            color: #315b8c;
-        }
+.bottom-section .section-heading {
+    margin-bottom: 9px;
+}
 
-        /* Footer */
-        footer {
-            max-width: 1400px;
-            margin: 35px auto 0;
-            padding: 18px 20px;
-            border-top: 1px solid #d8e1ec;
-            text-align: center;
-            color: #777;
-            font-size: 14px;
-        }
+.bottom-section .section-heading h2 {
+    font-size: 20px;
+}
 
-        /* Mobile */
-        @media (max-width: 850px) {
-            .navbar {
-                flex-direction: column;
-                gap: 12px;
-                padding: 15px;
-            }
+/* Education */
+.education-entry {
+    display: grid;
+    grid-template-columns: 75px minmax(0, 1fr);
+    gap: 7px;
+    padding: 7px 0 10px;
+    border-bottom: 1px solid #e5e6e0;
+}
 
-            .site-title {
-                font-size: 23px;
-            }
+.education-entry:last-child {
+    border-bottom: none;
+}
 
-            .nav-links {
-                justify-content: center;
-                gap: 15px;
-            }
+.education-date {
+    color: #c75d4e;
+    font-size: 10px;
+    font-style: italic;
+}
 
-            .container {
-                grid-template-columns: 1fr;
-                padding: 0 18px;
-                gap: 20px;
-            }
+.education-degree {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.4;
+}
 
-            .sidebar {
-                border-right: none;
-                border-bottom: 1px solid #e0e5eb;
-                padding: 15px 5px 25px;
-            }
+.education-school {
+    color: #68777a;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    margin-top: 3px;
+}
 
-            .profile-name {
-                font-size: 32px;
-            }
+.education-advisor {
+    font-size: 10px;
+    margin-top: 3px;
+}
 
-            .content {
-                grid-template-columns: 1fr;
-                grid-template-areas:
-                    "about"
-                    "publications"
-                    "projects"
-                    "education"
-                    "news";
-                gap: 18px;
-            }
+.education-advisor a {
+    font-weight: bold;
+}
 
-            .publications {
-                min-height: 0;
-            }
+/* News */
+.news-item {
+    display: grid;
+    grid-template-columns: 35px minmax(0, 1fr);
+    gap: 7px;
+    padding: 8px 0;
+    border-bottom: 1px solid #e5e6e0;
+}
 
-            .news-date {
-                width: auto;
-                margin-right: 10px;
-            }
-        }
-    </style>
+.news-item:last-child {
+    border-bottom: none;
+}
+
+.news-date {
+    color: #c75d4e;
+    font-size: 10px;
+    font-style: italic;
+}
+
+.news-text {
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    color: #788080;
+    font-size: 11px;
+    padding: 12px;
+    border-top: 1px solid #d9d9d2;
+}
+
+/* Responsive */
+@media (max-width: 850px) {
+    .navbar {
+        height: auto;
+        padding: 12px 15px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .nav-links {
+        gap: 13px;
+        flex-wrap: wrap;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        margin: 15px auto;
+        padding: 0 12px;
+        gap: 15px;
+    }
+
+    .sidebar {
+        padding: 15px;
+    }
+
+    .profile-top {
+        display: grid;
+        grid-template-columns: 105px minmax(0, 1fr);
+        gap: 4px 13px;
+        align-items: center;
+    }
+
+    .avatar {
+        width: 100px;
+        height: 120px;
+        grid-row: span 3;
+        margin: 0;
+    }
+
+    .profile-name {
+        font-size: 22px;
+        margin: 0;
+    }
+
+    .profile-title {
+        font-size: 12px;
+        margin: 0;
+    }
+
+    .profile-location {
+        font-size: 11px;
+    }
+
+    .content {
+        padding: 18px 14px;
+    }
+
+    .interest-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .bottom-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+}
+
+@media (max-width: 450px) {
+    .site-title {
+        font-size: 14px;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 9px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
 </head>
 
 <body>
@@ -388,11 +511,12 @@
 <!-- Navigation -->
 <header class="navbar">
     <div class="site-title">
-        Tang Zhiteng's <span>Homepage</span>
+        Tang Zhiteng <span>唐志腾</span>
     </div>
 
     <nav class="nav-links">
-        <a href="#about">Home</a>
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
         <a href="#publications">Publications</a>
         <a href="#projects">Projects</a>
         <a href="#education">Education</a>
@@ -402,28 +526,35 @@
 
 <div class="container">
 
-    <!-- Left Sidebar -->
+    <!-- Left Profile -->
     <aside class="sidebar">
 
-        <h1 class="profile-name">
-            Tang Zhiteng
-        </h1>
+        <div class="profile-top">
 
-        <div class="profile-title">
-            Ph.D. Student in Computer Science and Technology
+            <div class="avatar">
+                <img src="avatar.jpg"
+                     alt="Tang Zhiteng"
+                     onerror="this.style.display='none'; this.parentElement.textContent='TZ';">
+            </div>
+
+            <h1 class="profile-name">
+                Tang Zhiteng
+            </h1>
+
+            <div class="profile-title">
+                Ph.D. Student in Computer Science and Technology
+            </div>
+
+            <div class="profile-location">
+                Wuhan University of Technology · Wuhan, China
+            </div>
+
         </div>
-
-        <div class="profile-location">
-            Wuhan University of Technology · Wuhan, China
-        </div>
-
-        <hr>
 
         <div class="profile-item">
             <div class="profile-label">ADVISOR</div>
             <div class="profile-value">
-                <a href="https://junwzhou.github.io/"
-                   target="_blank">
+                <a href="https://junwzhou.github.io/" target="_blank">
                     Prof. Junwei Zhou ↗
                 </a>
             </div>
@@ -441,23 +572,17 @@
         <div class="profile-item">
             <div class="profile-label">FOCUS</div>
             <div class="profile-value">
-                Task-oriented image compression ·
-                Generative image compression ·
-                Diffusion models ·
+                Image compression · Diffusion models ·
                 Multi-task visual perception
             </div>
         </div>
 
         <div class="profile-social">
             <a href="https://orcid.org/0009-0003-7083-7148"
-               target="_blank">
-                ORCID
-            </a>
+               target="_blank">ORCID</a>
 
             <a href="https://github.com/tangzhiteng"
-               target="_blank">
-                GitHub
-            </a>
+               target="_blank">GitHub</a>
         </div>
 
     </aside>
@@ -465,12 +590,15 @@
     <!-- Right Content -->
     <main class="content">
 
-        <!-- 01 About Me -->
+        <!-- 01 About -->
         <section class="section about" id="about">
-            <h2>About Me</h2>
+
+            <div class="section-heading">
+                <span class="section-number">01</span>
+                <h2>About</h2>
+            </div>
 
             <div class="section-body">
-
                 <p>
                     I am a direct-entry Ph.D. student at Wuhan University
                     of Technology, advised by
@@ -481,52 +609,129 @@
                     image compression, diffusion models, and multi-task
                     visual perception.
                 </p>
-
-                <p class="research-interests">
-                    <strong>Research Interests:</strong>
-                    Task-oriented Image Compression ·
-                    Generative Image Compression ·
-                    Diffusion Models ·
-                    Multi-task Visual Perception
-                </p>
-
             </div>
+
         </section>
 
-        <!-- 02 Publications -->
-        <section class="section publications" id="publications">
-            <h2>Publications</h2>
+        <!-- 02 Research Interests -->
+        <section class="section" id="research">
 
-            <div class="section-body">
-                <p>
-                    No publications yet.
-                    This section will be updated as my research is published.
-                </p>
+            <div class="section-heading">
+                <span class="section-number">02</span>
+                <h2>Research Interests</h2>
             </div>
+
+            <div class="interest-grid">
+
+                <div class="interest-item">
+                    <span class="interest-number">01</span>
+                    <span class="interest-name">
+                        Task-oriented Image Compression
+                    </span>
+                </div>
+
+                <div class="interest-item">
+                    <span class="interest-number">02</span>
+                    <span class="interest-name">
+                        Generative Image Compression
+                    </span>
+                </div>
+
+                <div class="interest-item">
+                    <span class="interest-number">03</span>
+                    <span class="interest-name">
+                        Diffusion Models
+                    </span>
+                </div>
+
+                <div class="interest-item">
+                    <span class="interest-number">04</span>
+                    <span class="interest-name">
+                        Multi-task Visual Perception
+                    </span>
+                </div>
+
+            </div>
+
         </section>
 
-        <!-- 03 Research Projects -->
-        <section class="section projects" id="projects">
-            <h2>Research Projects</h2>
+        <!-- 03 Publications -->
+        <section class="section" id="publications">
 
-            <div class="section-body">
-                <ul class="simple-list">
-                    <li>
-                        <span class="project-name">
+            <div class="section-heading">
+                <span class="section-number">03</span>
+                <h2>Selected Publications</h2>
+            </div>
+
+            <div class="publication-item">
+                <span class="item-number">01</span>
+                <div>
+                    <div class="publication-title">
+                        No publications yet.
+                    </div>
+                    <div class="publication-note">
+                        Publications will be listed here as they become available.
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- 04 Projects -->
+        <section class="section" id="projects">
+
+            <div class="section-heading">
+                <span class="section-number">04</span>
+                <h2>Projects</h2>
+            </div>
+
+            <div class="project-grid">
+
+                <div class="project-card">
+                    <div class="project-year">202X</div>
+                    <div>
+                        <div class="project-title">
                             Development of an Inventory Management System
                             for Power Warehouse Materials in Qingyuan,
                             Guangdong
-                        </span>
-                    </li>
-                </ul>
+                        </div>
+                        <div class="project-description">
+                            Power warehouse inventory management system.
+                        </div>
+                    </div>
+                </div>
+
             </div>
+
         </section>
 
-        <!-- 04 Education -->
-        <section class="section education" id="education">
-            <h2>Education</h2>
+        <!-- Bottom: News and Education -->
+        <div class="bottom-grid">
 
-            <div class="section-body">
+            <!-- 05 News -->
+            <section class="bottom-section" id="news">
+
+                <div class="section-heading">
+                    <span class="section-number">05</span>
+                    <h2>News</h2>
+                </div>
+
+                <div class="news-item">
+                    <span class="news-date">2026</span>
+                    <div class="news-text">
+                        Research activities and updates.
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- 06 Education -->
+            <section class="bottom-section" id="education">
+
+                <div class="section-heading">
+                    <span class="section-number">06</span>
+                    <h2>Education</h2>
+                </div>
 
                 <div class="education-entry">
 
@@ -534,24 +739,26 @@
                         2025–Present
                     </div>
 
-                    <div class="education-degree">
-                        Direct-entry Ph.D. in Computer Science and Technology
-                    </div>
+                    <div>
+                        <div class="education-degree">
+                            Direct-entry Ph.D. in Computer Science and Technology
+                        </div>
 
-                    <div class="education-school">
-                        School of Artificial Intelligence
-                    </div>
+                        <div class="education-school">
+                            School of Artificial Intelligence
+                        </div>
 
-                    <div class="education-school">
-                        Wuhan University of Technology
-                    </div>
+                        <div class="education-school">
+                            Wuhan University of Technology
+                        </div>
 
-                    <div class="education-advisor">
-                        Advisor:
-                        <a href="https://junwzhou.github.io/"
-                           target="_blank">
-                            <strong>Prof. Junwei Zhou ↗</strong>
-                        </a>
+                        <div class="education-advisor">
+                            Advisor:
+                            <a href="https://junwzhou.github.io/"
+                               target="_blank">
+                                Prof. Junwei Zhou ↗
+                            </a>
+                        </div>
                     </div>
 
                 </div>
@@ -562,36 +769,25 @@
                         2022–2025
                     </div>
 
-                    <div class="education-degree">
-                        B.S. in Artificial Intelligence
-                    </div>
+                    <div>
+                        <div class="education-degree">
+                            Undergraduate Studies
+                        </div>
 
-                    <div class="education-school">
-                        School of Artificial Intelligence and Computer Science
-                    </div>
+                        <div class="education-school">
+                            School of Artificial Intelligence and Computer Science
+                        </div>
 
-                    <div class="education-school">
-                        Nantong University
+                        <div class="education-school">
+                            Nantong University
+                        </div>
                     </div>
 
                 </div>
 
-            </div>
-        </section>
+            </section>
 
-        <!-- 05 News -->
-        <section class="section news" id="news">
-            <h2>News</h2>
-
-            <div class="section-body">
-                <ul class="news-list">
-                    <li>
-                        <span class="news-date">2026</span>
-                        Research updates will be added here.
-                    </li>
-                </ul>
-            </div>
-        </section>
+        </div>
 
     </main>
 
@@ -603,4 +799,5 @@
 
 </body>
 </html>
+
 
