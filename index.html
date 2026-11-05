@@ -13,9 +13,8 @@
 
         body {
             margin: 0;
-            padding: 0;
             background: #ffffff;
-            color: #333333;
+            color: #30343b;
             font-family: Georgia, "Times New Roman", serif;
             line-height: 1.7;
         }
@@ -32,7 +31,7 @@
         /* Navigation */
         .navbar {
             max-width: 1400px;
-            margin: 0 auto;
+            margin: auto;
             padding: 18px 30px;
             display: flex;
             justify-content: space-between;
@@ -47,14 +46,18 @@
             white-space: nowrap;
         }
 
+        .site-title span {
+            color: #1769c2;
+        }
+
         .nav-links {
             display: flex;
-            gap: 34px;
+            gap: 32px;
             flex-wrap: wrap;
         }
 
         .nav-links a {
-            color: #333333;
+            color: #333;
             font-weight: bold;
             font-size: 16px;
         }
@@ -89,8 +92,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #315b8c;
             background: #f4f7fb;
+            color: #315b8c;
             font-size: 38px;
         }
 
@@ -128,7 +131,7 @@
             font-size: 17px;
         }
 
-        /* Content sections */
+        /* Content layout */
         .content {
             min-width: 0;
             display: grid;
@@ -142,11 +145,12 @@
             align-content: start;
         }
 
+        /* Common section style */
         .section {
             border: 1px solid #d5e3f4;
             border-radius: 8px;
             overflow: hidden;
-            background: #ffffff;
+            background: #fff;
         }
 
         .section h2 {
@@ -171,13 +175,14 @@
             margin-bottom: 0;
         }
 
+        /* Section positions */
         .about {
             grid-area: about;
         }
 
         .publications {
             grid-area: publications;
-            min-height: 330px;
+            min-height: 350px;
             display: flex;
             flex-direction: column;
         }
@@ -210,12 +215,12 @@
         }
 
         .publication-list li {
-            margin-bottom: 17px;
+            margin-bottom: 15px;
         }
 
         .publication-links {
             font-size: 14px;
-            margin-top: 4px;
+            margin-top: 3px;
         }
 
         .more-link {
@@ -227,14 +232,50 @@
             font-weight: bold;
         }
 
-        /* Projects and Education */
-        .simple-list {
-            padding-left: 22px;
-            margin: 3px 0;
+        /* Research Projects */
+        .project-name {
+            font-weight: bold;
+            color: #30343b;
         }
 
-        .simple-list li {
-            margin-bottom: 7px;
+        /* Education */
+        .education-entry {
+            padding: 3px 0 17px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid #e0e5eb;
+        }
+
+        .education-entry:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 3px;
+        }
+
+        .education-date {
+            color: #c65d50;
+            font-style: italic;
+            font-size: 15px;
+            margin-bottom: 2px;
+        }
+
+        .education-degree {
+            color: #172b4d;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1.4;
+        }
+
+        .education-school {
+            color: #687b91;
+            font-size: 15px;
+        }
+
+        .education-advisor {
+            font-size: 15px;
+        }
+
+        .education-advisor strong {
+            color: #315b78;
         }
 
         /* News */
@@ -262,7 +303,7 @@
             padding: 18px 20px;
             border-top: 1px solid #d8e1ec;
             text-align: center;
-            color: #777777;
+            color: #777;
             font-size: 14px;
         }
 
@@ -323,7 +364,9 @@
 
 <!-- Navigation -->
 <header class="navbar">
-    <div class="site-title">Tang Zhiteng's Homepage</div>
+    <div class="site-title">
+        Tang Zhiteng's <span>Homepage</span>
+    </div>
 
     <nav class="nav-links">
         <a href="#about">Home</a>
@@ -347,10 +390,11 @@
         <h2>Tang Zhiteng</h2>
 
         <p class="sidebar-info">
-            Ph.D. Student
+            Direct-entry Ph.D. Student
         </p>
 
         <p class="sidebar-info">
+            School of Artificial Intelligence,
             Wuhan University of Technology
         </p>
 
@@ -358,9 +402,15 @@
 
         <div class="contact-links">
             <a href="mailto:YOUR_EMAIL">✉ Email</a>
-            <a href="https://github.com/tangzhiteng" target="_blank">◉ GitHub</a>
-            <a href="YOUR_SCHOLAR_URL" target="_blank">◆ Google Scholar</a>
-            <a href="YOUR_CV_URL" target="_blank">▤ CV</a>
+
+            <a href="https://github.com/tangzhiteng"
+               target="_blank">◉ GitHub</a>
+
+            <a href="YOUR_SCHOLAR_URL"
+               target="_blank">◆ Google Scholar</a>
+
+            <a href="YOUR_CV_URL"
+               target="_blank">▤ CV</a>
         </div>
 
     </aside>
@@ -368,107 +418,132 @@
     <!-- Right Content -->
     <main class="content">
 
-        <!-- About Me -->
+        <!-- 01 About Me -->
         <section class="section about" id="about">
             <h2>About Me</h2>
 
             <div class="section-body">
+
                 <p>
-                    I am a Ph.D. student at Wuhan University of Technology.
-                    My research focuses on computer vision and deep learning,
-                    particularly generative image compression and
-                    multi-task visual perception.
+                    I am a direct-entry Ph.D. student at Wuhan University
+                    of Technology, advised by
+                    <a href="https://junwzhou.github.io/" target="_blank">
+                        Prof. Junwei Zhou
+                    </a>.
+                    My research focuses on task-oriented and generative
+                    image compression, diffusion models, and multi-task
+                    visual perception. In particular, I explore how to
+                    preserve and enhance task-relevant information under
+                    extremely low bitrates to support object detection,
+                    instance segmentation, and semantic segmentation.
                 </p>
 
                 <p class="research-interests">
                     <strong>Research Interests:</strong>
-                    Computer Vision ·
+                    Task-oriented Image Compression ·
                     Generative Image Compression ·
                     Diffusion Models ·
                     Multi-task Visual Perception
                 </p>
+
             </div>
         </section>
 
-        <!-- Publications -->
+        <!-- 02 Publications -->
         <section class="section publications" id="publications">
             <h2>Publications</h2>
 
             <div class="section-body">
-                <ol class="publication-list">
-                    <li>
-                        <strong>Paper Title.</strong>
-                        Author A, <strong>Tang Zhiteng</strong>, Author C.
-                        <em>Conference / Journal</em>, Year.
-                        <div class="publication-links">
-                            <a href="#">[Paper]</a>
-                            <a href="#">[Code]</a>
-                        </div>
-                    </li>
-
-                    <li>
-                        <strong>Another Paper Title.</strong>
-                        Author A, Tang Zhiteng, Author C.
-                        <em>Conference / Journal</em>, Year.
-                        <div class="publication-links">
-                            <a href="#">[Paper]</a>
-                            <a href="#">[Code]</a>
-                        </div>
-                    </li>
-                </ol>
+                <p>
+                    No publications yet.
+                    This section will be updated as my research is published.
+                </p>
             </div>
-
-            <a class="more-link" href="YOUR_SCHOLAR_URL">
-                More Publications →
-            </a>
         </section>
 
-        <!-- Research Projects -->
+        <!-- 03 Research Projects -->
         <section class="section projects" id="projects">
             <h2>Research Projects</h2>
 
             <div class="section-body">
                 <ul class="simple-list">
-                    <li>Generative Image Compression</li>
-                    <li>Task-oriented Visual Compression</li>
-                    <li>Multi-task Visual Perception</li>
-                </ul>
-            </div>
-
-            <a class="more-link" href="https://github.com/tangzhiteng">
-                More Projects →
-            </a>
-        </section>
-
-        <!-- Education -->
-        <section class="section education" id="education">
-            <h2>Education</h2>
-
-            <div class="section-body">
-                <ul class="simple-list">
                     <li>
-                        <strong>Ph.D. in Computer Science</strong><br>
-                        Wuhan University of Technology<br>
-                        2025 – Present
+                        <span class="project-name">
+                            Development of an Inventory Management System
+                            for Power Warehouse Materials in Qingyuan,
+                            Guangdong
+                        </span>
                     </li>
                 </ul>
             </div>
         </section>
 
-        <!-- News -->
+        <!-- 04 Education -->
+        <section class="section education" id="education">
+            <h2>Education</h2>
+
+            <div class="section-body">
+
+                <div class="education-entry">
+
+                    <div class="education-date">
+                        2025–Present
+                    </div>
+
+                    <div class="education-degree">
+                        Direct-entry Ph.D. in Computer Science and Technology
+                    </div>
+
+                    <div class="education-school">
+                        School of Artificial Intelligence
+                    </div>
+
+                    <div class="education-school">
+                        Wuhan University of Technology
+                    </div>
+
+                    <div class="education-advisor">
+                        Advisor:
+                        <a href="https://junwzhou.github.io/"
+                           target="_blank">
+                            <strong>Prof. Junwei Zhou ↗</strong>
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="education-entry">
+
+                    <div class="education-date">
+                        2022–2025
+                    </div>
+
+                    <div class="education-degree">
+                        Undergraduate Studies
+                    </div>
+
+                    <div class="education-school">
+                        School of Artificial Intelligence and Computer Science
+                    </div>
+
+                    <div class="education-school">
+                        Nantong University
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 05 News -->
         <section class="section news" id="news">
             <h2>News</h2>
 
             <div class="section-body">
                 <ul class="news-list">
                     <li>
-                        <span class="news-date">2026-XX</span>
+                        <span class="news-date">2026</span>
                         Research updates will be added here.
-                    </li>
-
-                    <li>
-                        <span class="news-date">2026-XX</span>
-                        New publications and projects will be updated here.
                     </li>
                 </ul>
             </div>
@@ -484,3 +559,4 @@
 
 </body>
 </html>
+
