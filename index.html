@@ -1,801 +1,889 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tang Zhiteng | Homepage</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Academic homepage of Tang Zhiteng, Ph.D. student at Wuhan University of Technology.">
+<title>Tang Zhiteng | Academic Homepage</title>
 
 <style>
+:root {
+  --page: #f3f2ed;
+  --paper: #ffffff;
+  --ink: #17272b;
+  --muted: #69777a;
+  --line: #d9ddd7;
+  --line-soft: #e7e9e3;
+  --teal: #185c61;
+  --red: #c45c4d;
+  --tile: #f3f1eb;
+}
+
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
-    background: #f4f3ee;
-    color: #17272b;
-    font-family: Georgia, "Times New Roman", serif;
-    line-height: 1.5;
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.55;
 }
 
 a {
-    color: #185c61;
-    text-decoration: none;
+  color: var(--teal);
+  text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* Navigation */
-.navbar {
-    height: 40px;
-    padding: 0 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #d9d9d2;
-    background: #f4f3ee;
+.site-header {
+  min-height: 40px;
+  border-bottom: 1px solid var(--line);
+  background: var(--page);
 }
 
-.site-title {
-    font-size: 15px;
-    font-weight: bold;
-    white-space: nowrap;
+.nav-wrap {
+  max-width: 1400px;
+  min-height: 40px;
+  margin: auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
 }
 
-.site-title span {
-    color: #185c61;
-    font-size: 12px;
-    margin-left: 5px;
+.wordmark {
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: bold;
+  white-space: nowrap;
 }
 
-.nav-links {
-    display: flex;
-    gap: 22px;
-    align-items: center;
+.wordmark span {
+  color: var(--teal);
+  font-size: 12px;
+  margin-left: 5px;
 }
 
-.nav-links a {
-    font-family: Arial, sans-serif;
-    font-size: 10px;
-    font-weight: bold;
-    color: #17272b;
+nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+nav a {
+  color: var(--ink);
+  font: bold 10px Arial, sans-serif;
+  white-space: nowrap;
+}
+
+.language-switch {
+  display: inline-flex;
+  gap: 2px;
+  align-items: center;
+  padding: 3px;
+  border: 1px solid #cbd4d0;
+  border-radius: 20px;
+  background: white;
+  cursor: pointer;
+  font: 10px Arial, sans-serif;
+  white-space: nowrap;
+}
+
+.language-switch span {
+  padding: 3px 7px;
+  border-radius: 14px;
+  color: var(--ink);
+}
+
+.language-switch .active {
+  color: white;
+  background: var(--teal);
 }
 
 /* Main layout */
-.container {
-    max-width: 1400px;
-    margin: 25px auto;
-    padding: 0 24px;
-    display: grid;
-    grid-template-columns: 245px minmax(0, 1fr);
-    gap: 32px;
-    align-items: start;
+.page-shell {
+  max-width: 1400px;
+  margin: 25px auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 245px minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
 }
 
 /* Left profile */
-.sidebar {
-    background: #ffffff;
-    border: 1px solid #d8dcd6;
-    padding: 17px 15px;
+.profile {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 17px 15px;
 }
 
-.profile-top {
-    padding: 0 0 14px;
-    border-bottom: 1px solid #d8dcd6;
+.portrait {
+  display: block;
+  width: 128px;
+  height: 152px;
+  margin: 0 auto 12px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 3px;
+  background: #e9e8e1;
 }
 
-.avatar {
-    width: 128px;
-    height: 152px;
-    margin: 0 auto 12px;
-    overflow: hidden;
-    border-radius: 3px;
-    background: #e9e8e1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #185c61;
-    font-size: 32px;
+.profile-copy {
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
 }
 
-.avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.profile h1 {
+  font-size: 25px;
+  line-height: 1.25;
+  margin: 0 0 8px;
 }
 
-.profile-name {
-    font-size: 25px;
-    font-weight: bold;
-    line-height: 1.25;
-    margin: 0 0 8px;
+.profile h1 small {
+  color: var(--teal);
+  font-size: 13px;
+  margin-left: 4px;
 }
 
-.profile-title {
-    font-family: Arial, sans-serif;
-    font-size: 13px;
-    font-weight: bold;
-    line-height: 1.5;
-    margin-bottom: 6px;
+.role {
+  margin: 0 0 6px;
+  font: bold 13px/1.5 Arial, sans-serif;
 }
 
-.profile-location {
-    font-family: Arial, sans-serif;
-    color: #68777a;
-    font-size: 11px;
-    line-height: 1.6;
+.institution {
+  margin: 0;
+  color: var(--muted);
+  font: 11px/1.6 Arial, sans-serif;
 }
 
-.profile-item {
-    padding: 10px 0;
-    border-bottom: 1px solid #e5e6e0;
+.profile-facts {
+  margin: 0;
 }
 
-.profile-label {
-    font-family: Arial, sans-serif;
-    font-size: 9px;
-    font-weight: bold;
-    letter-spacing: 0.7px;
-    color: #69787a;
-    margin-bottom: 3px;
+.profile-facts > div {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line-soft);
 }
 
-.profile-value {
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    line-height: 1.6;
-    color: #25373a;
-    overflow-wrap: anywhere;
+.profile-facts > div:last-child {
+  border-bottom: 0;
 }
 
-.profile-value a {
-    font-weight: bold;
-    text-decoration: underline;
+.profile-facts dt {
+  margin-bottom: 3px;
+  color: var(--muted);
+  font: bold 9px Arial, sans-serif;
+  letter-spacing: .7px;
+  text-transform: uppercase;
 }
 
-.profile-social {
-    display: flex;
-    justify-content: center;
-    gap: 22px;
-    padding-top: 12px;
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    font-weight: bold;
+.profile-facts dd {
+  margin: 0;
+  color: #26383b;
+  font: 11px/1.6 Arial, sans-serif;
+  overflow-wrap: anywhere;
 }
 
-/* Main content panel */
+.profile-facts a {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.profile-actions {
+  padding-top: 5px;
+}
+
+.profile-actions > div {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+}
+
+.profile-actions a {
+  font: bold 11px Arial, sans-serif;
+}
+
+/* Right content */
 .content {
-    background: #ffffff;
-    border: 1px solid #d8dcd6;
-    padding: 22px 27px 30px;
-    min-width: 0;
+  min-width: 0;
+  padding: 22px 27px 30px;
+  background: var(--paper);
+  border: 1px solid var(--line);
 }
 
-/* Sections */
-.section {
-    padding-bottom: 23px;
-    margin-bottom: 17px;
-    border-bottom: 1px solid #d5dad3;
+section {
+  scroll-margin-top: 18px;
 }
 
-.section:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
+.intro {
+  padding-bottom: 25px !important;
+}
+
+.content > section {
+  padding-bottom: 23px;
+  margin-bottom: 17px;
+  border-bottom: 1px solid var(--line);
+}
+
+.content > section:last-of-type {
+  border-bottom: 0;
 }
 
 .section-heading {
-    display: flex;
-    align-items: baseline;
-    gap: 9px;
-    margin-bottom: 7px;
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  margin-bottom: 7px;
 }
 
-.section-number {
-    color: #c75d4e;
-    font-size: 10px;
-    font-style: italic;
-    min-width: 9px;
+.section-heading > span {
+  min-width: 9px;
+  color: var(--red);
+  font-size: 10px;
+  font-style: italic;
 }
 
 .section-heading h2 {
-    font-size: 21px;
-    color: #17353a;
-    margin: 0;
-    line-height: 1.4;
+  margin: 0;
+  color: #17353a;
+  font-size: 21px;
+  line-height: 1.4;
 }
 
-.section-body {
-    font-size: 13px;
-    line-height: 1.7;
-    color: #263438;
+.prose {
+  color: #263438;
+  font-size: 13px;
+  line-height: 1.7;
 }
 
-.section-body p {
-    margin: 0;
-}
-
-/* About */
-.about {
-    padding-bottom: 25px;
+.prose p {
+  margin: 0;
 }
 
 /* Research Interests */
-.interest-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 9px;
-    margin-top: 10px;
+.interest-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 9px;
+  margin-top: 10px;
 }
 
-.interest-item {
-    min-height: 75px;
-    background: #f3f1eb;
-    border-top: 2px solid #185c61;
-    padding: 10px 9px;
-    display: flex;
-    align-items: flex-start;
-    gap: 7px;
+.interest-list article {
+  min-height: 75px;
+  padding: 10px 9px;
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  background: var(--tile);
+  border-top: 2px solid var(--teal);
 }
 
-.interest-number {
-    color: #c75d4e;
-    font-size: 9px;
-    font-style: italic;
-    flex-shrink: 0;
+.interest-list b {
+  flex: 0 0 auto;
+  color: var(--red);
+  font-size: 9px;
+  font-style: italic;
 }
 
-.interest-name {
-    font-size: 12px;
-    font-weight: bold;
-    line-height: 1.3;
-    color: #17272b;
+.interest-list h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 12px;
+  line-height: 1.35;
 }
 
 /* Publications */
-.publication-item {
-    display: grid;
-    grid-template-columns: 28px minmax(0, 1fr);
-    gap: 9px;
-    padding: 9px 0;
-    border-bottom: 1px solid #e5e6e0;
+.publication {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 9px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--line-soft);
 }
 
-.publication-item:last-child {
-    border-bottom: none;
+.publication:last-child {
+  border-bottom: 0;
 }
 
-.item-number {
-    color: #c75d4e;
-    font-size: 10px;
-    font-style: italic;
+.pub-index {
+  color: var(--red);
+  font-size: 10px;
+  font-style: italic;
 }
 
-.publication-title {
-    font-size: 13px;
-    font-weight: bold;
-    color: #17272b;
+.pub-body h3 {
+  margin: 4px 0;
+  font-size: 13px;
+  line-height: 1.45;
 }
 
-.publication-note {
-    color: #69787a;
-    font-size: 11px;
-    margin-top: 5px;
+.pub-body p {
+  margin: 4px 0;
+  color: #526367;
+  font: 10px/1.6 Arial, sans-serif;
+}
+
+.pub-note {
+  color: var(--muted);
+  font: 11px/1.6 Arial, sans-serif;
 }
 
 /* Projects */
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-    margin-top: 9px;
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-top: 9px;
 }
 
 .project-card {
-    background: #f3f1eb;
-    border-top: 2px solid #185c61;
-    padding: 11px 10px;
-    min-height: 90px;
-    display: grid;
-    grid-template-columns: 35px minmax(0, 1fr);
-    gap: 7px;
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 8px;
+  min-height: 78px;
+  padding: 11px 10px;
+  background: var(--tile);
+  border-top: 2px solid var(--teal);
 }
 
-.project-year {
-    color: #c75d4e;
-    font-size: 10px;
-    font-style: italic;
+.project-card time,
+.news-item time,
+.education-item time {
+  color: var(--red);
+  font-size: 10px;
+  font-style: italic;
 }
 
-.project-title {
-    font-size: 12px;
-    font-weight: bold;
-    line-height: 1.4;
+.project-card h3 {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.4;
 }
 
-.project-description {
-    font-size: 10px;
-    color: #68777a;
-    margin-top: 4px;
+.project-card p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font: 10px/1.5 Arial, sans-serif;
 }
 
-/* Bottom two columns */
-.bottom-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 22px;
-    margin-top: 0;
+/* News and Education */
+.lower-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 22px;
 }
 
-.bottom-section {
-    min-width: 0;
+.lower-grid section {
+  min-width: 0;
 }
 
-.bottom-section .section-heading {
-    margin-bottom: 9px;
+.lower-grid .section-heading h2 {
+  font-size: 20px;
 }
 
-.bottom-section .section-heading h2 {
-    font-size: 20px;
+.news-item,
+.education-item {
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr);
+  gap: 7px;
+  padding: 8px 0 10px;
+  border-bottom: 1px solid var(--line-soft);
 }
 
-/* Education */
-.education-entry {
-    display: grid;
-    grid-template-columns: 75px minmax(0, 1fr);
-    gap: 7px;
-    padding: 7px 0 10px;
-    border-bottom: 1px solid #e5e6e0;
+.news-item:last-child,
+.education-item:last-child {
+  border-bottom: 0;
 }
 
-.education-entry:last-child {
-    border-bottom: none;
+.news-item p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
 }
 
-.education-date {
-    color: #c75d4e;
-    font-size: 10px;
-    font-style: italic;
+.education-item h3 {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.4;
 }
 
-.education-degree {
-    font-size: 12px;
-    font-weight: bold;
-    line-height: 1.4;
+.education-item p {
+  margin: 3px 0 0;
+  color: var(--muted);
+  font: 10px/1.5 Arial, sans-serif;
 }
 
-.education-school {
-    color: #68777a;
-    font-family: Arial, sans-serif;
-    font-size: 10px;
-    margin-top: 3px;
-}
-
-.education-advisor {
-    font-size: 10px;
-    margin-top: 3px;
-}
-
-.education-advisor a {
-    font-weight: bold;
-}
-
-/* News */
-.news-item {
-    display: grid;
-    grid-template-columns: 35px minmax(0, 1fr);
-    gap: 7px;
-    padding: 8px 0;
-    border-bottom: 1px solid #e5e6e0;
-}
-
-.news-item:last-child {
-    border-bottom: none;
-}
-
-.news-date {
-    color: #c75d4e;
-    font-size: 10px;
-    font-style: italic;
-}
-
-.news-text {
-    font-size: 12px;
-    line-height: 1.5;
+.education-item p a {
+  font-weight: bold;
 }
 
 /* Footer */
 footer {
-    text-align: center;
-    color: #788080;
-    font-size: 11px;
-    padding: 12px;
-    border-top: 1px solid #d9d9d2;
+  max-width: 1352px;
+  margin: 0 auto;
+  padding: 12px 24px 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid var(--line);
+  color: #788080;
+  font: 10px Arial, sans-serif;
 }
 
 /* Responsive */
-@media (max-width: 850px) {
-    .navbar {
-        height: auto;
-        padding: 12px 15px;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
+@media (max-width: 900px) {
+  .nav-wrap {
+    flex-wrap: wrap;
+    padding: 10px 15px;
+  }
 
-    .nav-links {
-        gap: 13px;
-        flex-wrap: wrap;
-    }
+  nav {
+    order: 3;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 13px;
+  }
 
-    .container {
-        grid-template-columns: 1fr;
-        margin: 15px auto;
-        padding: 0 12px;
-        gap: 15px;
-    }
+  .page-shell {
+    grid-template-columns: 1fr;
+    margin: 15px auto;
+    padding: 0 12px;
+    gap: 15px;
+  }
 
-    .sidebar {
-        padding: 15px;
-    }
+  .profile {
+    display: grid;
+    grid-template-columns: 110px minmax(0, 1fr);
+    gap: 0 14px;
+  }
 
-    .profile-top {
-        display: grid;
-        grid-template-columns: 105px minmax(0, 1fr);
-        gap: 4px 13px;
-        align-items: center;
-    }
+  .portrait {
+    grid-row: span 2;
+    width: 105px;
+    height: 125px;
+    margin: 0;
+  }
 
-    .avatar {
-        width: 100px;
-        height: 120px;
-        grid-row: span 3;
-        margin: 0;
-    }
+  .profile-copy {
+    align-self: center;
+  }
 
-    .profile-name {
-        font-size: 22px;
-        margin: 0;
-    }
+  .profile-facts,
+  .profile-actions {
+    grid-column: 1 / -1;
+  }
 
-    .profile-title {
-        font-size: 12px;
-        margin: 0;
-    }
+  .content {
+    padding: 18px 15px;
+  }
 
-    .profile-location {
-        font-size: 11px;
-    }
-
-    .content {
-        padding: 18px 14px;
-    }
-
-    .interest-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .bottom-grid {
-        grid-template-columns: 1fr;
-        gap: 18px;
-    }
+  .interest-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
-@media (max-width: 450px) {
-    .site-title {
-        font-size: 14px;
-    }
+@media (max-width: 560px) {
+  .lower-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
 
-    .nav-links {
-        gap: 10px;
-    }
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
 
-    .nav-links a {
-        font-size: 9px;
-    }
-
-    .project-grid {
-        grid-template-columns: 1fr;
-    }
+  footer {
+    flex-direction: column;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- Navigation -->
-<header class="navbar">
-    <div class="site-title">
-        Tang Zhiteng <span>唐志腾</span>
-    </div>
+<a href="#main" style="position:absolute;left:-9999px;">Skip to content</a>
 
-    <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
-        <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
-        <a href="#news">News</a>
+<!-- Navigation -->
+<header class="site-header">
+  <div class="nav-wrap">
+
+    <a class="wordmark" href="#top">
+      Tang Zhiteng <span>滕堂智</span>
+    </a>
+
+    <nav aria-label="Primary navigation">
+      <a href="#about" data-en="About" data-zh="简介">About</a>
+      <a href="#research" data-en="Research" data-zh="研究方向">Research</a>
+      <a href="#publications" data-en="Publications" data-zh="论文">Publications</a>
+      <a href="#projects" data-en="Projects" data-zh="项目">Projects</a>
+      <a href="#education" data-en="Education" data-zh="教育经历">Education</a>
+      <a href="#news" data-en="News" data-zh="动态">News</a>
     </nav>
+
+    <button class="language-switch" type="button"
+      aria-label="Switch language" onclick="toggleLanguage()">
+      <span class="active" id="en-button">EN</span>
+      <span id="zh-button">中文</span>
+    </button>
+
+  </div>
 </header>
 
-<div class="container">
+<div class="page-shell" id="top">
 
-    <!-- Left Profile -->
-    <aside class="sidebar">
+  <!-- Left Profile -->
+  <aside class="profile">
 
-        <div class="profile-top">
+    <img class="portrait"
+         src="avatar.jpg"
+         alt="Portrait of Tang Zhiteng"
+         onerror="this.onerror=null;this.src='assets/avatar.jpg';">
 
-            <div class="avatar">
-                <img src="avatar.jpg"
-                     alt="Tang Zhiteng"
-                     onerror="this.style.display='none'; this.parentElement.textContent='TZ';">
-            </div>
+    <div class="profile-copy">
 
-            <h1 class="profile-name">
-                Tang Zhiteng
-            </h1>
+      <h1>
+        Tang Zhiteng <small>滕堂智</small>
+      </h1>
 
-            <div class="profile-title">
-                Ph.D. Student in Computer Science and Technology
-            </div>
+      <p class="role"
+         data-en="Direct-entry Ph.D. Student in Computer Science and Technology"
+         data-zh="计算机科学与技术专业直博生">
+        Direct-entry Ph.D. Student in Computer Science and Technology
+      </p>
 
-            <div class="profile-location">
-                Wuhan University of Technology · Wuhan, China
-            </div>
+      <p class="institution"
+         data-en="Wuhan University of Technology · Wuhan, China"
+         data-zh="武汉理工大学 · 中国武汉">
+        Wuhan University of Technology · Wuhan, China
+      </p>
 
+    </div>
+
+    <dl class="profile-facts">
+
+      <div>
+        <dt data-en="Advisor" data-zh="导师">Advisor</dt>
+        <dd>
+          <a href="https://junwzhou.github.io/"
+             target="_blank" rel="noreferrer">
+            Prof. Junwei Zhou ↗
+          </a>
+        </dd>
+      </div>
+
+      <div>
+        <dt data-en="Email" data-zh="邮箱">Email</dt>
+        <dd>
+          <a href="mailto:tangzhiteng@whut.edu.cn">
+            tangzhiteng@whut.edu.cn
+          </a>
+        </dd>
+      </div>
+
+      <div>
+        <dt data-en="Focus" data-zh="研究方向">Focus</dt>
+        <dd
+          data-en="Task-oriented image compression · Generative image compression"
+          data-zh="任务导向图像压缩 · 生成式图像压缩">
+          Task-oriented image compression · Generative image compression
+        </dd>
+      </div>
+
+    </dl>
+
+    <div class="profile-actions">
+      <div>
+        <a href="https://orcid.org/0009-0003-7083-7148"
+           target="_blank" rel="me noreferrer">ORCID</a>
+
+        <a href="https://github.com/tangzhiteng"
+           target="_blank" rel="me noreferrer">GitHub</a>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- Right Content -->
+  <main id="main" class="content">
+
+    <!-- 01 About -->
+    <section class="intro" id="about">
+
+      <div class="section-heading">
+        <span>01</span>
+        <h2 data-en="About" data-zh="个人简介">About</h2>
+      </div>
+
+      <div class="prose">
+        <p
+          data-en="I am a direct-entry Ph.D. student at Wuhan University of Technology, advised by Prof. Junwei Zhou. My research focuses on task-oriented and generative image compression, diffusion models, and multi-task visual perception."
+          data-zh="我是武汉理工大学计算机科学与技术专业直博生，导师为周俊伟教授。我的研究方向包括任务导向图像压缩、生成式图像压缩、扩散模型与多任务视觉感知。">
+          I am a direct-entry Ph.D. student at Wuhan University of Technology,
+          advised by Prof. Junwei Zhou. My research focuses on task-oriented
+          and generative image compression, diffusion models, and multi-task
+          visual perception.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- 02 Research Interests -->
+    <section id="research">
+
+      <div class="section-heading">
+        <span>02</span>
+        <h2 data-en="Research Interests" data-zh="研究方向">
+          Research Interests
+        </h2>
+      </div>
+
+      <div class="interest-list">
+
+        <article>
+          <b>01</b>
+          <div>
+            <h3 data-en="Task-oriented Image Compression"
+                data-zh="任务导向图像压缩">
+              Task-oriented Image Compression
+            </h3>
+          </div>
+        </article>
+
+        <article>
+          <b>02</b>
+          <div>
+            <h3 data-en="Generative Image Compression"
+                data-zh="生成式图像压缩">
+              Generative Image Compression
+            </h3>
+          </div>
+        </article>
+
+        <article>
+          <b>03</b>
+          <div>
+            <h3 data-en="Diffusion Models"
+                data-zh="扩散模型">
+              Diffusion Models
+            </h3>
+          </div>
+        </article>
+
+        <article>
+          <b>04</b>
+          <div>
+            <h3 data-en="Multi-task Visual Perception"
+                data-zh="多任务视觉感知">
+              Multi-task Visual Perception
+            </h3>
+          </div>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- 03 Publications -->
+    <section id="publications">
+
+      <div class="section-heading">
+        <span>03</span>
+        <h2 data-en="Selected Publications"
+            data-zh="代表性论文">
+          Selected Publications
+        </h2>
+      </div>
+
+      <article class="publication">
+
+        <div class="pub-index">—</div>
+
+        <div class="pub-body">
+          <p class="pub-note"
+             data-en="Publications will be listed here as they become available."
+             data-zh="论文发表后将在此处更新。">
+            Publications will be listed here as they become available.
+          </p>
         </div>
 
-        <div class="profile-item">
-            <div class="profile-label">ADVISOR</div>
-            <div class="profile-value">
-                <a href="https://junwzhou.github.io/" target="_blank">
-                    Prof. Junwei Zhou ↗
-                </a>
-            </div>
+      </article>
+
+    </section>
+
+    <!-- 04 Projects -->
+    <section id="projects">
+
+      <div class="section-heading">
+        <span>04</span>
+        <h2 data-en="Projects" data-zh="项目经历">Projects</h2>
+      </div>
+
+      <div class="projects-grid">
+
+        <article class="project-card">
+
+          <time data-en="Project" data-zh="项目">Project</time>
+
+          <div>
+
+            <h3
+              data-en="Development of an Inventory Management System for Power Warehouse Materials in Qingyuan, Guangdong"
+              data-zh="广东清远电力仓库物资盘点系统开发">
+              Development of an Inventory Management System for Power
+              Warehouse Materials in Qingyuan, Guangdong
+            </h3>
+
+            <p
+              data-en="Power warehouse materials inventory management system."
+              data-zh="电力仓库物资盘点与管理系统。">
+              Power warehouse materials inventory management system.
+            </p>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- News and Education -->
+    <div class="lower-grid">
+
+      <!-- 05 News -->
+      <section id="news">
+
+        <div class="section-heading">
+          <span>05</span>
+          <h2 data-en="News" data-zh="动态">News</h2>
         </div>
 
-        <div class="profile-item">
-            <div class="profile-label">EMAIL</div>
-            <div class="profile-value">
-                <a href="mailto:tangzhiteng@whut.edu.cn">
-                    tangzhiteng@whut.edu.cn
-                </a>
-            </div>
+        <article class="news-item">
+
+          <time data-en="2026" data-zh="2026年">2026</time>
+
+          <p
+            data-en="Updates on research and academic activities will be posted here."
+            data-zh="研究进展与学术动态将在此处更新。">
+            Updates on research and academic activities will be posted here.
+          </p>
+
+        </article>
+
+      </section>
+
+      <!-- 06 Education -->
+      <section id="education">
+
+        <div class="section-heading">
+          <span>06</span>
+          <h2 data-en="Education" data-zh="教育经历">
+            Education
+          </h2>
         </div>
 
-        <div class="profile-item">
-            <div class="profile-label">FOCUS</div>
-            <div class="profile-value">
-                Image compression · Diffusion models ·
-                Multi-task visual perception
-            </div>
-        </div>
+        <article class="education-item">
 
-        <div class="profile-social">
-            <a href="https://orcid.org/0009-0003-7083-7148"
-               target="_blank">ORCID</a>
+          <time>2025–Present</time>
 
-            <a href="https://github.com/tangzhiteng"
-               target="_blank">GitHub</a>
-        </div>
+          <div>
 
-    </aside>
+            <h3
+              data-en="Direct-entry Ph.D. in Computer Science and Technology"
+              data-zh="计算机科学与技术专业直博生">
+              Direct-entry Ph.D. in Computer Science and Technology
+            </h3>
 
-    <!-- Right Content -->
-    <main class="content">
+            <p
+              data-en="School of Artificial Intelligence, Wuhan University of Technology"
+              data-zh="武汉理工大学人工智能学院">
+              School of Artificial Intelligence,
+              Wuhan University of Technology
+            </p>
 
-        <!-- 01 About -->
-        <section class="section about" id="about">
+            <p>
+              <span data-en="Advisor" data-zh="导师">Advisor</span>:
+              <a href="https://junwzhou.github.io/"
+                 target="_blank" rel="noreferrer">
+                Prof. Junwei Zhou ↗
+              </a>
+            </p>
 
-            <div class="section-heading">
-                <span class="section-number">01</span>
-                <h2>About</h2>
-            </div>
+          </div>
 
-            <div class="section-body">
-                <p>
-                    I am a direct-entry Ph.D. student at Wuhan University
-                    of Technology, advised by
-                    <a href="https://junwzhou.github.io/" target="_blank">
-                        Prof. Junwei Zhou
-                    </a>.
-                    My research focuses on task-oriented and generative
-                    image compression, diffusion models, and multi-task
-                    visual perception.
-                </p>
-            </div>
+        </article>
 
-        </section>
+        <article class="education-item">
 
-        <!-- 02 Research Interests -->
-        <section class="section" id="research">
+          <time>2022–2025</time>
 
-            <div class="section-heading">
-                <span class="section-number">02</span>
-                <h2>Research Interests</h2>
-            </div>
+          <div>
 
-            <div class="interest-grid">
+            <h3 data-en="Undergraduate Studies"
+                data-zh="本科">
+              Undergraduate Studies
+            </h3>
 
-                <div class="interest-item">
-                    <span class="interest-number">01</span>
-                    <span class="interest-name">
-                        Task-oriented Image Compression
-                    </span>
-                </div>
+            <p
+              data-en="School of Artificial Intelligence and Computer Science, Nantong University"
+              data-zh="南通大学人工智能与计算机学院">
+              School of Artificial Intelligence and Computer Science,
+              Nantong University
+            </p>
 
-                <div class="interest-item">
-                    <span class="interest-number">02</span>
-                    <span class="interest-name">
-                        Generative Image Compression
-                    </span>
-                </div>
+          </div>
 
-                <div class="interest-item">
-                    <span class="interest-number">03</span>
-                    <span class="interest-name">
-                        Diffusion Models
-                    </span>
-                </div>
+        </article>
 
-                <div class="interest-item">
-                    <span class="interest-number">04</span>
-                    <span class="interest-name">
-                        Multi-task Visual Perception
-                    </span>
-                </div>
+      </section>
 
-            </div>
+    </div>
 
-        </section>
-
-        <!-- 03 Publications -->
-        <section class="section" id="publications">
-
-            <div class="section-heading">
-                <span class="section-number">03</span>
-                <h2>Selected Publications</h2>
-            </div>
-
-            <div class="publication-item">
-                <span class="item-number">01</span>
-                <div>
-                    <div class="publication-title">
-                        No publications yet.
-                    </div>
-                    <div class="publication-note">
-                        Publications will be listed here as they become available.
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <!-- 04 Projects -->
-        <section class="section" id="projects">
-
-            <div class="section-heading">
-                <span class="section-number">04</span>
-                <h2>Projects</h2>
-            </div>
-
-            <div class="project-grid">
-
-                <div class="project-card">
-                    <div class="project-year">202X</div>
-                    <div>
-                        <div class="project-title">
-                            Development of an Inventory Management System
-                            for Power Warehouse Materials in Qingyuan,
-                            Guangdong
-                        </div>
-                        <div class="project-description">
-                            Power warehouse inventory management system.
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- Bottom: News and Education -->
-        <div class="bottom-grid">
-
-            <!-- 05 News -->
-            <section class="bottom-section" id="news">
-
-                <div class="section-heading">
-                    <span class="section-number">05</span>
-                    <h2>News</h2>
-                </div>
-
-                <div class="news-item">
-                    <span class="news-date">2026</span>
-                    <div class="news-text">
-                        Research activities and updates.
-                    </div>
-                </div>
-
-            </section>
-
-            <!-- 06 Education -->
-            <section class="bottom-section" id="education">
-
-                <div class="section-heading">
-                    <span class="section-number">06</span>
-                    <h2>Education</h2>
-                </div>
-
-                <div class="education-entry">
-
-                    <div class="education-date">
-                        2025–Present
-                    </div>
-
-                    <div>
-                        <div class="education-degree">
-                            Direct-entry Ph.D. in Computer Science and Technology
-                        </div>
-
-                        <div class="education-school">
-                            School of Artificial Intelligence
-                        </div>
-
-                        <div class="education-school">
-                            Wuhan University of Technology
-                        </div>
-
-                        <div class="education-advisor">
-                            Advisor:
-                            <a href="https://junwzhou.github.io/"
-                               target="_blank">
-                                Prof. Junwei Zhou ↗
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="education-entry">
-
-                    <div class="education-date">
-                        2022–2025
-                    </div>
-
-                    <div>
-                        <div class="education-degree">
-                            Undergraduate Studies
-                        </div>
-
-                        <div class="education-school">
-                            School of Artificial Intelligence and Computer Science
-                        </div>
-
-                        <div class="education-school">
-                            Nantong University
-                        </div>
-                    </div>
-
-                </div>
-
-            </section>
-
-        </div>
-
-    </main>
+  </main>
 
 </div>
 
 <footer>
-    © 2026 Tang Zhiteng. Academic Homepage.
+  <span>© 2026 Tang Zhiteng</span>
+  <span>
+    <a href="mailto:tangzhiteng@whut.edu.cn">
+      tangzhiteng@whut.edu.cn
+    </a>
+  </span>
 </footer>
+
+<script>
+let currentLanguage = "en";
+
+function toggleLanguage() {
+
+  currentLanguage = currentLanguage === "en" ? "zh" : "en";
+
+  document.documentElement.lang = currentLanguage;
+
+  document.querySelectorAll("[data-en][data-zh]").forEach(element => {
+    element.textContent = element.dataset[currentLanguage];
+  });
+
+  document.getElementById("en-button")
+    .classList.toggle("active", currentLanguage === "en");
+
+  document.getElementById("zh-button")
+    .classList.toggle("active", currentLanguage === "zh");
+}
+</script>
 
 </body>
 </html>
